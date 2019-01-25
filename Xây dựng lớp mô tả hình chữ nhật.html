@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+
+</head>
+<body>
+<canvas id = 'Canvas' width='600' height= '300' style = 'border :1px solid #d3d3d3'></canvas>
+<script>
+    var hinhCN = function(x,y)
+    {
+        this.x=x;
+        this.y=y;
+        this.getX =function()
+        {
+            return this.x;
+        };
+        this.getY= function()
+        {
+            return this.Y;
+        };
+        this.dienTich = function ()
+        {
+            return x*y;
+        };
+        this.chuVi= function()
+        {
+            return (x+y) *2;
+        }
+    };
+    var veHinh=function()
+    {
+        var canvas = document.getElementById('Canvas').getContext('2d');
+        var hinhCn = new hinhCN(300,100);
+        document.write('<br>chu vi hình chữ nhật: ' +hinhCn.chuVi()+ '<br>');
+        document.write('diện tích hình chữ nhật : ' +hinhCn.dienTich()+ '<br>');
+        canvas.beginPath();
+        canvas.strokeRect(100,100,hinhCn.x,hinhCn.y);
+    };
+    veHinh();
+</script>
+</body>
+</html>
